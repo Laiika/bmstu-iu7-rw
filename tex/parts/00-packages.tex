@@ -1,0 +1,120 @@
+\usepackage{cmap} % Улучшенный поиск русских слов в полученном pdf-файле
+\usepackage[T2A]{fontenc} % Поддержка русских букв
+\usepackage[utf8]{inputenc} % Кодировка utf8
+\usepackage[english,russian]{babel} % Языки: английский, русский
+\usepackage{enumitem}
+\usepackage{threeparttable}
+\usepackage{multirow}
+\usepackage{booktabs}
+
+\usepackage[14pt]{extsizes}
+\usepackage{geometry}
+\geometry{left=30mm}
+\geometry{right=10mm}
+\geometry{top=20mm}
+\geometry{bottom=20mm}
+
+\usepackage{caption}
+\captionsetup[table]{justification=raggedright,singlelinecheck=off}
+\captionsetup[lstlisting]{justification=raggedright,singlelinecheck=off}
+\captionsetup{labelsep=endash}
+\captionsetup[figure]{name={Рисунок}}
+
+\usepackage{amsmath}
+\usepackage{csvsimple}
+\usepackage{enumitem} 
+\setenumerate[0]{label=\arabic*)} % Изменение вида нумерации списков
+\renewcommand{\labelitemi}{---}
+
+% Переопределение стандартных \section, \subsection, \subsubsection по ГОСТу;
+% Переопределение их отступов до и после для 1.5 интервала во всем документе
+\usepackage{titlesec}
+\titleformat{\section}
+{\normalsize\bfseries}
+{\thesection}
+{1em}{}
+\titlespacing*{\chapter}{0pt}{-30pt}{8pt}
+\titlespacing*{\section}{\parindent}{*4}{*4}
+\titlespacing*{\subsection}{\parindent}{*4}{*4}
+
+\usepackage{titlesec}
+\titleformat{\chapter}{\LARGE\bfseries}{\thechapter}{16pt}{\LARGE\bfseries}
+\titleformat{\section}{\Large\bfseries}{\thesection}{16pt}{\Large\bfseries}
+
+\usepackage{setspace}
+\onehalfspacing % Полуторный интервал
+
+\frenchspacing
+\usepackage{indentfirst} % Красная строка после заголовка
+\setlength\parindent{1.25cm}
+
+\usepackage{listings}
+\usepackage{xcolor}
+
+\usepackage{ulem} % Нормальное нижнее подчеркивание
+\usepackage{hhline} % Двойная горизонтальная линия в таблицах
+\usepackage[figure,table]{totalcount} % Подсчет изображений, таблиц
+\usepackage{rotating} % Поворот изображения вместе с названием
+\usepackage{lastpage} % Для подсчета числа страниц
+% Дополнительное окружения для подписей
+\usepackage{array}
+\newenvironment{signstabular}[1][1]{
+	\renewcommand*{\arraystretch}{#1}
+	\tabular
+}{
+	\endtabular
+}
+
+\makeatletter 
+\def\@biblabel#1{#1. } % Изменение нумерации списка использованных источников
+\makeatother\makeatletter 
+\def\@biblabel#1{#1. } % Изменение нумерации списка использованных источников
+\makeatother
+
+% Links
+\def\UrlBreaks{\do\/\do-\do\_}
+\usepackage[nottoc]{tocbibind} % for bib link
+\usepackage[numbers]{natbib}
+\renewcommand*{\bibnumfmt}[1]{#1.}
+
+% Для листинга кода:
+\lstset{%
+	language=c++,   					% выбор языка для подсветки	
+	basicstyle=\small\sffamily,			% размер и начертание шрифта для подсветки кода
+	numbers=left,						% где поставить нумерацию строк (слева\справа)
+	%numberstyle=,					% размер шрифта для номеров строк
+	stepnumber=1,						% размер шага между двумя номерами строк
+	numbersep=5pt,						% как далеко отстоят номера строк от подсвечиваемого кода
+	frame=single,						% рисовать рамку вокруг кода
+	tabsize=4,							% размер табуляции по умолчанию равен 4 пробелам
+	captionpos=t,						% позиция заголовка вверху [t] или внизу [b]
+	breaklines=true,					
+	breakatwhitespace=true,				% переносить строки только если есть пробел
+	escapeinside={\#*}{*)},				% если нужно добавить комментарии в коде
+	backgroundcolor=\color{white}
+}
+
+
+\usepackage{pgfplots}
+\usetikzlibrary{datavisualization}
+\usetikzlibrary{datavisualization.formats.functions}
+
+\usepackage{graphicx}
+
+\usepackage[justification=centering]{caption} % Настройка подписей float объектов
+
+\usepackage[linktoc=all]{hyperref} % Ссылки в pdf
+\hypersetup{hidelinks}
+
+\newcommand{\code}[1]{\texttt{#1}}
+
+\usepackage{pifont}
+\newcommand{\cmark}{\textcolor{green}{\ding{51}}}%
+\newcommand{\xmark}{\textcolor{red}{\ding{55}}}%
+
+\usepackage{pdfpages}
+
+\usepackage[english,russian]{babel}
+\usepackage{fontspec}
+\defaultfontfeatures{Ligatures={TeX},Renderer=Basic}
+\setmainfont[Ligatures={TeX,Historic}]{Times New Roman}
